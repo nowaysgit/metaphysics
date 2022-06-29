@@ -1,0 +1,453 @@
+@font-face {
+  font-family: 'ZenKaiUniv';
+  src: url('fonts/ChinaCut-ZenKaiUniv-webfont.eot');
+  src: url('fonts/ChinaCut-ZenKaiUniv-webfont.eot?#iefix')
+    format('embedded-opentype'),
+    url('fonts/ChinaCut-ZenKaiUniv-webfont.woff2') format('woff2'),
+    url('fonts/ChinaCut-ZenKaiUniv-webfont.woff') format('woff'),
+    url('fonts/ChinaCut-ZenKaiUniv-webfont.ttf') format('truetype'),
+    url('fonts/ChinaCut-ZenKaiUniv-webfont.svg#chinacut-zenkaiunivregular')
+    format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ui-tooltip {
+	background-color: rgb(255, 253, 239);
+}
+.ui-tooltip-content{
+	/*font-size: 12px;*/
+}
+/*bootstrap responsive off*/
+/*body { min-width: 960px; }
+.container { width: 960px; max-width: none !important; }*/
+
+.china-name, .pillar-china-name, .hidden-stem-horizontal-china-name, .hidden-stem-vertical-china-name, 
+.years-china-name, .sym-stars-china-name, .nai-element, .lumin-china-name { 
+  font-family: ZenKaiUniv;
+  vertical-align: middle;
+  line-height: 1.1em;
+  height: 1.1em;
+	margin: 2px 0px !important;
+}
+.Wood  {color: #006633 !important}
+.Fire  {color: #cc0000 !important}
+.Earth {color: #663300 !important}
+.Metal {color: #666666 !important}
+.Water {color: #0066cc !important}
+
+.wait-indicator {
+	display: none;
+	opacity: 0.8;
+	filter: 'alpha(opacity=80)';
+	z-index: 998;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 0px !important;
+	background: #e3e3e3 url('loading.gif') 50% 50% no-repeat;
+}
+h1 {font-size: 24px}
+h2 {font-size: 18px; font-weight: bold; margin: 12px 0px 8px; text-align: center}
+h3 {font-size: 16px; }
+/*---------------------MAIN TABLE------------------------*/
+.main-table {
+	margin: 10px auto;
+	/*border: 1px solid gray;*/
+	font-family: "Trebuchet MS", geneva, helvetica, arial, tahoma, verdana, sans-serif;
+	color: #464f52;
+	font-size: 13px;
+	line-height: normal;
+}
+.main-table td {
+	vertical-align: top;
+}
+/*---------------------DATA FORM------------------------*/
+.data-form {
+/*	margin: 0px auto 15px;
+	text-align: center;*/
+	color: red !important;
+}
+.data-form .form-row {
+	margin-bottom: 10px;
+	color: red !important;
+}
+.data-form .btn {
+	width: 126px;
+}
+.type.form-control, .data-form .form-control {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 62px !important
+}
+.data-form .checkbox {
+  display: inline-block !important;
+	width: 120px !important;
+	padding-left: 0px !important;
+}
+/*---------------------BAZI------------------------*/
+.bazi-table {
+	font-size: 11px;
+	text-align: center;
+	margin: auto;
+	width: 363px;
+}
+.four-pillars-table, .year-period-table
+{
+	/* Убираем двойные линии между ячейками */
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+.four-pillars-table td, .year-period-table td
+{
+	padding: 0px; 
+	border: 1px solid black;
+	vertical-align: top;
+	text-align: center;
+	/*width: 25%;*/ 
+	width: 85px;	
+	font-size: 16px;
+}
+.sym-stars-table {
+	width: 772px; 
+	margin: auto; 
+	text-align: left;
+	font-size: 15px;
+}
+.sym-stars
+{
+	font-size: 15px;
+}	
+.sym-stars-left
+{
+	/*padding-left: 30px;*/
+}
+.sym-stars-right
+{
+	padding-left: 180px;
+}
+.sym-stars-china-name
+{
+	font-size: 18px;
+}
+.pillar .pillar-china-name
+{
+	font-size: 50px;
+	height: 55px;
+}
+.pillar-rus-name, .hidden-stem-vertical-rus-name
+{
+/*	border: 1px solid black;*/
+	font-size: 12px;
+	line-height: 130%;
+}
+.hidden-stem-vertical-china-name
+{
+/*	border: 1px solid black;*/
+	font-size: 24px;
+	height: 26px;
+}
+.hidden-stem-vertical-lumin
+{
+	font-size: 11px;
+	padding: 3px 2px;
+	border-top: 1px solid black;	
+	border-bottom: 1px solid black;
+	/*cursor: pointer;*/
+}
+.born-hidden-stem
+{
+/*	margin-left: 26px;
+	margin-right: 26px;
+	border: 1px solid black;*/
+	font-size: 36px;
+	height: 36px;
+}
+.hidden-stem-horizontal-china-name
+{
+	/*border: 1px solid black;*/
+	letter-spacing: 0.3em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 20px !important;
+	height: 20px !important;
+}
+.hidden-stem-horizontal-china-name .born-hidden-stem
+{
+	letter-spacing: 0.1em;	
+	font-size: 18px;
+	height: 18px;
+}
+.luck-pillars-table
+{
+	margin: auto;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+.luck-pillars-table td
+{
+	padding: 0px; 
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: middle;
+	width: 85px;
+	font-size: 13px;
+}
+.luck-pillars-table .pillar-china-name 
+{
+	font-size: 40px;
+	height: 40px;
+}
+.luck-pillars-table .pillar-rus-name
+{
+	font-size: 11px;
+}
+.luck-pillars-table .hidden-stem-horizontal-china-name
+{
+	font-size: 16px !important;
+	height: 16px !important;
+}
+.luck-pillars-table .years-china-name
+{
+	margin: 0px;
+	font-size: 14px;
+}
+.da-gua-row td
+{
+	line-height: 70%;
+	padding: 4px 0px;
+}
+.dagua
+{
+	position: absolute;
+	top: 3px;
+	right: 4px;		
+	line-height: 10px;
+	font-size: 13px;
+	font-weight: bold;
+}
+.lumin-row td, .sym-stars-row td
+{
+	font-size: 11px;
+	padding: 3px 2px;
+	/*cursor: pointer;*/
+}
+.sym-stars-row td 
+{
+	vertical-align: top;
+}
+.years-table td 
+{
+	border: none;
+	/*border-bottom: 1px solid black;*/
+	padding: 2px;
+}
+.sym-star
+{
+/*	border: 1px solid #666666;
+	border-radius: 4px ;
+	margin-top: 2px;*/
+	margin-top: 7px;
+	cursor: pointer;
+}
+.gua-table
+{
+	width: 120px;
+	border: none;
+	margin: 25px 20px 0px 0px;
+	float: left;
+}
+.bazi-light .gua-table
+{
+	margin: 40px 40px 0px 0px !important;
+}
+.gua-table td:nth-child(odd) {text-align: left}
+.gua-table td:nth-child(even) {text-align: right}
+
+.lumin
+{
+	position: relative;
+	width: 420px;
+	height: 398px;
+	text-align: center;
+	margin-top: 75px;
+	margin-bottom: 10px;
+}
+.lumin img {
+  position: absolute; 
+  left:0; 
+  top:0;
+}
+.lumin .lumin-china-name
+{
+	font-size: 22px;
+	height: 22px;
+	margin: 0px;
+}
+
+.lumin-spacer
+{
+	height: 12px;
+}
+
+.lumin .lumin-index
+{
+	font-size: 10px;
+	vertical-align: sub;
+}
+
+#EqualsYang {
+	left: 166px;
+	position: absolute;
+	top: 35px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #EqualsYang {
+	height: auto;
+	min-height: 68px;
+}
+#EqualsYin {
+	left: 211px;
+	position: absolute;
+	top: 35px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #EqualsYin {
+	height: auto;
+	min-height: 68px;
+}
+#CreatingYin {
+	left: 344px;
+	position: absolute;
+	top: 132px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #CreatingYin {
+	height: auto;
+	min-height: 68px;
+}
+#CreatingYang {
+	left: 299px;
+	position: absolute;
+	top: 132px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #CreatingYang {
+	height: auto;
+	min-height: 68px;
+}
+#CreatingMeYin {
+	left: 78px;
+	position: absolute;
+	top: 132px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #CreatingMeYin {
+	height: auto;
+	min-height: 68px;
+}
+#CreatingMeYang {
+	left: 33px;
+	position: absolute;
+	top: 132px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #CreatingMeYang {
+	height: auto;
+	min-height: 68px;
+}
+#PenetratingMeYin {
+	left: 134px;
+	position: absolute;
+	top: 271px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #PenetratingMeYin {
+	height: auto;
+	min-height: 68px;
+}
+#PenetratingMeYang {
+	left: 89px;
+	position: absolute;
+	top: 271px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #PenetratingMeYang {
+	height: auto;
+	min-height: 68px;
+}
+#PenetratingYin {
+	left: 291px;
+	position: absolute;
+	top: 273px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #PenetratingYin {
+	height: auto;
+	min-height: 68px;
+}
+#PenetratingYang {
+	left: 247px;
+	position: absolute;
+	top: 273px;
+	margin-bottom: 0;
+	/*border: 1px solid #0080ff;*/
+	width: 46px;
+	padding-top: 0px;
+	height: 69px;
+}
+html > body #PenetratingYang {
+	height: auto;
+	min-height: 68px;
+}
+
+
+@media print {
+	.main-table
+	{
+		zoom: 0.9;
+		-ms-zoom: 0.9;
+		-webkit-zoom: 0.9;
+	}	
+	table
+  {
+		 margin: 0;
+	}
+}
