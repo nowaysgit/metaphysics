@@ -5,10 +5,10 @@ import calcRoute from "./CalcRouter.js";
 
 const router = Router();
 
-router.use('/api/user', userRoute);
-router.use('/api/calc', calcRoute);
-router.use('/', staticRoute);
-router.use('*', (req, res) => {
+router.use('/user', userRoute);
+router.use('/calc', calcRoute);
+//router.use('/', staticRoute);
+router.use('/*', (req, res) => {
   res.status(404).send("404");
 });
 

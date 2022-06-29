@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'ZenKaiUniv';
+  src: url('fonts/ChinaCut-ZenKaiUniv-webfont.eot');
+  src: url('fonts/ChinaCut-ZenKaiUniv-webfont.eot?#iefix')
+    format('embedded-opentype'),
+    url('fonts/ChinaCut-ZenKaiUniv-webfont.woff2') format('woff2'),
+    url('fonts/ChinaCut-ZenKaiUniv-webfont.woff') format('woff'),
+    url('fonts/ChinaCut-ZenKaiUniv-webfont.ttf') format('truetype'),
+    url('fonts/ChinaCut-ZenKaiUniv-webfont.svg#chinacut-zenkaiunivregular')
+    format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.china-name {
+  font-family: ZenKaiUniv;
+  vertical-align: middle;
+  line-height: 1.2em;
+  height: 1.2em
+}
+.Wood  {color: #32CD32 !important}
+.Fire  {color: #FF0000 !important}
+.Earth {color: #FFA500 !important}
+.Metal {color: #777777 !important}
+.Water {color: #0000FF !important}
+
+.tile-well {
+	width: 300px;
+	height: 400px;
+	padding: 5px !important;
+	margin: auto;
+	margin-bottom: 0px !important;
+	border: 1px solid #bbb !important;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) !important;
+}
+.tile-title {
+	font-size: 19px;
+	text-align: center;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #e3e3e3;
+}
+.tile-content {
+	height: 346px;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+/*---------------------GUA------------------------*/
+.gua-chart {
+	width: 252px;
+	height: 252px;
+	margin: auto;
+}
+.gua-form.form-inline select {
+	display: inline-block;
+}
+.gua-cell {
+	cursor: pointer;
+	font-size: 12px;
+	padding-top: 23px;
+	margin: 2px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	float: left;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	color: white;
+}
+.gua-cell.center {
+	font-size: 38px;
+	padding-top: 12px;
+	background-color: #F9EA9B;
+	color: #333;
+}
+.gua-cell.center.house-gua{
+	pointer-events: none;
+}
+.gua-desc {
+	display: none;
+	position: absolute;
+	top: -10px;
+	height: 350px;
+	padding-top: 15px;
+	background-color: #f5f5f5;
+	z-index: 1;
+}
+.gua-desc .text p {
+	text-align: justify;
+	margin: 8px 0px;
+	height: 250px;
+	overflow-y: auto;
+}
+/*---------------------BAZI------------------------*/
+.bazi-table {
+	width: 100%;
+	height: 346px;
+	background-color: #f9f9f9;
+	font-size: 11px;
+}
+.bazi-table thead {
+	background-color: #eee;
+	font-size: 16px;
+}
+.bazi-table td {
+	width: 25%;
+	border: 1px solid #bbb;
+}
+.bazi-table select {
+	width: 64px;
+	margin: 3px;
+	padding: 5px;
+}
+.bazi-table .china-name {
+	margin-top: 4px;
+	font-size: 44px;
+}
+.qimen-desc {
+  padding-top: 8px;
+  display: none;
+  position: absolute;
+  top: 0px;
+  height: 346px;
+  background-color: #f5f5f5;
+  z-index: 1;
+}
+.qimen-desc .content {
+  font-style: italic;
+  height: 289px;
+  overflow-y: auto;
+}
+.qimen-desc .content .text {
+  margin-top: 8px;
+}
+/*--------------------Ruler-------------------------*/
+.ruler-form.form-inline {
+  margin-top: 8px;
+}
+.ruler-img {
+  background: url('/img/ruler.png') no-repeat;
+  background-position: 144px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  width: 288px;
+  height: 28px;
+}
+.ruler-arrow {
+	line-height: 1em;
+	color: red;
+}
+.ruler-text {
+  height: 60px;
+}
+/* -----------------------------QiMen--------------------------------- */
+.qimen-chart-wrapper {
+  margin: auto;
+}
+.qimen-chart
+{
+  width: 252px;
+  height: 252px;
+  margin: auto;
+}
+.qimen-cell
+{
+  font-size: 18px;
+  padding: 1px 3px;
+  margin: 2px;
+  background-color: #f9f9f9;
+  border: 1px solid gray;
+  border-radius: 3px;
+  float: left;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.qimen-cell table {
+  width: 100%;
+  vertical-align: middle;
+}
+.qimen-name {
+  font-size: 10px;
+  line-height: 1em;
+  word-spacing: 10em;
+}
+.qimen-pediod {
+  height: 25px;
+  font-size: 14px;
+}

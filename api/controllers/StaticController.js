@@ -10,7 +10,7 @@ class UserController {
 
     static async MainPage(req, res, next) {
         try {
-			res.status(200).sendFile(path.join(__dirname, '../../public/mainCalc.html'));
+			res.status(200).sendFile(path.join(__dirname, '../../static/mainCalc.html'));
         } catch (e) {
             return next(e)
         }

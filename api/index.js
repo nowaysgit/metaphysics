@@ -11,20 +11,23 @@ import router from "./routes/index.js";
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'));
+app.use(express.static('static'));
 
 app.use('/', router);
 
+
 const start = async () => {  
-  try {
-    await sequelize.authenticate()
-    await sequelize.sync()
-    app.listen(port, () => {
-      return console.log(`server is listening on ${port}`);
-    });
-  } catch (e) {
-    console.log(e)
-  }
+	if (require.main === module) {
+	  try {
+		await sequelize.authenticate()
+		await sequelize.sync()
+		app.listen(port, () => {
+		  return console.log(`API server is listening on ${port}`);
+		});
+	  } catch (e) {
+		console.log(e)
+	  }
+	}
 };
 
 start();
