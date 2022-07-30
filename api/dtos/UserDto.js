@@ -1,11 +1,15 @@
 class UserDto {
-    id;
-    login;
+  email
+  access
+  accessDate
+  admin
 
-    constructor(model) {
-        this.id = model.id || model._id;
-        this.login = model.login;
-    }
+  constructor (model) {
+    this.email = model.email
+    this.access = model.access || false
+    this.accessDate = model.accessDate
+    this.admin = model.admin
+  }
 }
 
 export default UserDto

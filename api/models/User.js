@@ -1,10 +1,13 @@
-import db from "../db.js";
-import { DataTypes } from "sequelize";
+import { DataTypes } from 'sequelize'
+import db from '../db.js'
 
 const User = db.define('user', {
-    id: {type:DataTypes.STRING, primaryKey: true},
-	email: {type:DataTypes.STRING},
-    password: {type:DataTypes.STRING},
-}, {timestamps: false});
+  email: { type: DataTypes.STRING, primaryKey: true },
+  access: { type: DataTypes.BOOLEAN, default: false },
+  accessDate: { type: DataTypes.DATE },
+  code: { type: DataTypes.INTEGER },
+  admin: { type: DataTypes.BOOLEAN, default: false },
+  codeDate: { type: DataTypes.DATE }
+}, { timestamps: false })
 
-export default User;
+export default User

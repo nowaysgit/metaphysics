@@ -1,15 +1,21 @@
-import { Router } from "express";
-import staticRoute from "./StaticRouter.js";
-import userRoute from "./UserRouter.js";
-import calcRoute from "./CalcRouter.js";
+import { Router } from 'express'
+import userRouter from './UserRouter.js'
+import calcRouter from './CalcRouter.js'
+// import robokassaRoute from './RobokassaRouter.js'
+import yookassaRoute from './YookassaRouter.js'
+import ProductRouter from './ProductRouter.js'
+import BlogRouter from './BlogRouter.js'
 
-const router = Router();
+const router = Router()
 
-router.use('/user', userRoute);
-router.use('/calc', calcRoute);
-//router.use('/', staticRoute);
+router.use('/user', userRouter)
+router.use('/calc', calcRouter)
+// router.use('/robokassa', robokassaRoute)
+router.use('/yookassa', yookassaRoute)
+router.use('/product', ProductRouter)
+router.use('/blog', BlogRouter)
 router.use('/*', (req, res) => {
-  res.status(404).send("404");
-});
+  res.status(404).send('404')
+})
 
 export default router

@@ -14,7 +14,10 @@ module.exports = {
   },
   globals: {
     defineProps: 'readonly',
-    defineEmits: 'readonly'
+    defineEmits: 'readonly',
+    definePageMeta: 'readonly',
+    useLazyFetch: 'readonly',
+    $axios: 'readonly'
   },
   extends: [
     '@nuxtjs',

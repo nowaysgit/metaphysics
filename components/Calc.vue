@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-// eslint-disable-next-line import/named
 import { computed } from '@nuxtjs/composition-api'
 
 const props = defineProps({

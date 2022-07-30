@@ -1,51 +1,39 @@
 import nodemailer from 'nodemailer'
+import 'dotenv/config'
 
 class EmailService {
-    transporter;
+  transporter
 
-    constructor() {
-        this.transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth:{
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASSWORD
-            }
-        })
-    }
+  constructor () {
+    this.transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASSWORD
+      }
+    })
+  }
 
-
-    async SendActivationEmail(to, link) {
-        await this.transporter.sendMail({
-            from: process.env.SMTP_USER,
-            to: to,
-            subject: 'Активация аккаунта MyInf',
-            text: '',
-            html:
+  async SendActivationEmail (to, link) {
+    await this.transporter.sendMail({
+      from: process.env.SMTP_USER,
+      to,
+      subject: 'Вход на сайт',
+      text: '',
+      html:
                 `
                 <div>
-                    <h1>Для активации аккаунта перейдие по ссылке</h1>
+                    <h1>Для Входа на сайт введите код: ${link.substr(-5)}</h1>
+                </div>
+                <div>
+                    <h1>Или передите по ссылке: </h1>
                     <a href="${link}">${link}</a>
                 </div>
                 `
-        })
-    }
-
-    async SendRecoveryEmail(to, link) {
-        await this.transporter.sendMail({
-            from: process.env.SMTP_USER,
-            to: to,
-            subject: 'Восстановление доступа к аккаунту MyInf',
-            text: '',
-            html:
-                `
-                <div>
-                    <h1>Для смены пароля перейдие по ссылке</h1>
-                    <a href="${link}">${link}</a>
-                </div>
-                `
-        })
-    }
-
+    })
+  }
 }
 
-export default new EmailService();
+export default new EmailService()

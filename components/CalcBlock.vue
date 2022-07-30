@@ -1,13 +1,11 @@
 <template>
   <div class="block">
-    <Calc :name="props.calc" />
+    <div class="title">
+      {{ props.title }}
+    </div>
     <div class="info">
-      <div class="title">
-        {{ props.title }}
-      </div>
-      <div class="description">
-        {{ props.description }}
-      </div>
+      <Calc :name="props.calc" />
+      <div class="description" v-html="props.description" />
     </div>
   </div>
 </template>
@@ -32,25 +30,31 @@ const props = defineProps({
 <style lang="scss" scoped>
 .block {
   display: flex;
-  flex-direction: row;
-  .info {
-    margin-left:100px;
+  flex-direction: column;
+  .title {
+    margin-bottom: 80px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 140%;
+    letter-spacing: -0.98px;
     color: #000000;
-    width: 700px;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
 
-    .title {
-      margin-bottom: 40px;
-      font-weight: 400;
-      font-size: 54px;
-      line-height: 64px;
-      letter-spacing: -1.2px;
-
-    }
     .description {
+      width: 43.75vw;
+      margin-left: 200px;
+
+      font-style: normal;
       font-weight: 400;
-      font-size: 20px;
-      line-height: 30px;
-      letter-spacing: -0.33px;
+      font-size: 24px;
+      line-height: 160%;
+      letter-spacing: -0.47px;
+      color: #000000;
     }
   }
 }
