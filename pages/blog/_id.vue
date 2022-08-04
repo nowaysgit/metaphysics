@@ -5,7 +5,7 @@
         {{ post.title }}
       </p>
       <p class="date">
-        {{ `${new Date(post.date).getDay()} ${month[new Date(post.date).getMonth()]} ${new Date(post.date).getFullYear()}` }}
+        {{ `${new Date(post.date).getDay()+1} ${month[new Date(post.date).getMonth()]} ${new Date(post.date).getFullYear()}` }}
       </p>
       <img class="image" :src="`/img/blog/${post.photo}`" alt="">
       <p class="text">
@@ -17,27 +17,7 @@
         ЗАГРУЗКА...
       </p>
     </section>
-    <section v-if="posts" class="another">
-      <p class="title">
-        Читайте также
-      </p>
-      <div class="posts1">
-        <div v-for="pos in posts" :key="pos.id" class="post1">
-          <img class="image1" :src="`/img/blog/${pos.photo}`" alt="">
-          <NuxtLink class="title1" :to="`/blog/${pos.id}`">
-            {{ pos.title }}
-          </NuxtLink>
-          <p class="date1">
-            {{ `${new Date(pos.date).getDay()} ${month[new Date(pos.date).getMonth()]} ${new Date(pos.date).getFullYear()}` }}
-          </p>
-        </div>
-      </div>
-    </section>
-    <section v-else class="post">
-      <p class="text">
-        ЗАГРУЗКА...
-      </p>
-    </section>
+    <OtherPosts />
   </div>
 </template>
 
@@ -50,7 +30,6 @@ export default defineComponent({
     const { $axios } = useContext()
     store.dispatch('CheckAuth')
     const post = ref(null)
-    const posts = ref(null)
 
     const month = [
       'Январь',
@@ -71,16 +50,11 @@ export default defineComponent({
       post.value = data
     })
 
-    useFetch(async () => {
-      const { data } = await $axios.get(`/blog/getAll?count=3&excluding=${route.value.params.id}`)
-      posts.value = data
-    })
-
     useMeta({
       title: 'Пост'
     })
 
-    return { post, month, posts }
+    return { post, month }
   },
   head: {}
 })
@@ -104,11 +78,12 @@ export default defineComponent({
     font-family: 'Lato';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 40px;
     line-height: 130%;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
     color: #000000;
-    margin-top: 20px;
+    margin-top: -85px;
   }
 
   .date {
@@ -136,82 +111,30 @@ export default defineComponent({
     margin-top: 80px;
   }
 }
-.another {
-  margin-top: 180px;
+@media (max-width: 1200px) {
+  .post {
+    margin-bottom: 50px;
 
-  .title {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 130%;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-    color: #000000;
+    .image {
+      width: 89.74358974358975vw;
+      height: 64.1025641025641vw;
+      margin-top: 30px;
+    }
 
-    margin-bottom: 60px;
-  }
+    .title {
+      font-size: 6.153846153846154vw;
+      margin-top: 20px;
+    }
 
-  .posts1 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    .date {
+      font-size: 3.8461538461538463vw;
+      margin-top: 20px;
+    }
 
-    .post1 {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 50px;
-
-      .image1 {
-        width: 373px;
-        height: 270px;
-        object-fit: cover;
-      }
-
-      .title1 {
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 130%;
-        letter-spacing: -0.01em;
-        color: #000000;
-        margin-top: 20px;
-        max-width: 373px;
-        max-height: 78px;
-
-        overflow: hidden;
-        position: relative;
-        padding-right: 1em;
-      }
-      .title:before {
-        content: '…';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
-
-      .title:after {
-        content: "";
-        position: absolute;
-        right: 0;
-        width: 1em;
-        height: 1em;
-        margin-top: 0.2em;
-        background: white;
-      }
-
-      .date1 {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 150%;
-        letter-spacing: -0.26px;
-        color: rgba(0, 0, 0, 0.4);
-
-        margin-top: 10px;
-      }
+    .text {
+      font-size: 3.8461538461538463vw;
+      max-width: 100%;
+      margin-top: 40px;
     }
   }
 }

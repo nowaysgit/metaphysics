@@ -14,9 +14,9 @@ class CalcController {
         }
       }
       fetch(`${req.query.url.toString()}`).then(resp => resp.text()).then(function (data) {
-        data = data.replace('</title>', '</title><base href="http://localhost:8080/" />')
-        data = data.replace('<link rel="stylesheet" type="text/css" href="style.css">', '<link rel="stylesheet" type="text/css" href=" http://localhost:8080/style-main-calc.css"></head>')
-        data = data.replace('script.js', 'http://localhost:8080/script.js')
+        data = data.replace('</title>', '</title><base href="https://piancai.ru/" />')
+        data = data.replace('<link rel="stylesheet" type="text/css" href="style.css">', '<link rel="stylesheet" type="text/css" href="https://piancai.ru/style-main-calc.css"></head>')
+        data = data.replace('script.js', 'https://piancai.ru/script.js')
 
         res.status(200).send(data)
       })
@@ -35,7 +35,7 @@ class CalcController {
         }
       }
       fetch(`${req.query.url.toString()}`).then(resp => resp.text()).then(function (data) {
-        data = data.replace('</title>', '</title><base href="http://localhost:8080/" />')
+        data = data.replace('</title>', '</title><base href="https://piancai.ru/" />')
         data = data.replace('<link rel="stylesheet" type="text/css" href="style.css?20180624">', '<link rel="stylesheet" type="text/css" href="./style-bazi-calc.css"></head>')
 
         data = data.replace('<a style="color: #333" target="_top" href="http://portal.feng-tools.ru/?from=">калькуляторы фэн шуй</a> на <a target="_top" href="http://portal.feng-tools.ru/?from=">portal.feng-tools.ru</a>', '')
@@ -57,7 +57,7 @@ class CalcController {
         }
       }
       fetch(`${req.query.url.toString()}`).then(resp => resp.text()).then(function (data) {
-        data = data.replace('</title>', '</title><base href="http://localhost:8080/" />')
+        data = data.replace('</title>', '</title><base href="https://piancai.ru/" />')
         data = data.replace('<link rel="stylesheet" type="text/css" href="style.css?20180624">', '<link rel="stylesheet" type="text/css" href="./style-guapeople-calc.css"></head>')
 
         data = data.replace('gua.jsp?mode=human&year=', 'http://portal.feng-tools.ru/free_apps/gua.jsp?mode=human&year=')
@@ -81,7 +81,7 @@ class CalcController {
         }
       }
       fetch(`${req.query.url.toString()}`).then(resp => resp.text()).then(function (data) {
-        data = data.replace('</title>', '</title><base href="http://localhost:8080/" />')
+        data = data.replace('</title>', '</title><base href="https://piancai.ru/" />')
         data = data.replace('<link rel="stylesheet" type="text/css" href="style.css?20180624">', '<link rel="stylesheet" type="text/css" href="./style-guahouse-calc.css"></head>')
 
         data = data.replace('gua.jsp?mode=house&gua=', 'http://portal.feng-tools.ru/free_apps/gua.jsp?mode=house&gua=')
@@ -104,7 +104,7 @@ class CalcController {
         }
       }
       fetch(`${req.query.url.toString()}`).then(resp => resp.text()).then(function (data) {
-        data = data.replace('</title>', '</title><base href="http://localhost:8080/" />')
+        data = data.replace('</title>', '</title><base href="https://piancai.ru/" />')
         data = data.replace('<link rel="stylesheet" type="text/css" href="style.css?20180624">', '<link rel="stylesheet" type="text/css" href="./style-ruler-calc.css"></head>')
         data = data.replace('<link rel="stylesheet" type="text/css" href="style.css?20180624">', '<link rel="stylesheet" type="text/css" href="./style-ruler-calc.css"></head>')
 

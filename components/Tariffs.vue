@@ -1,7 +1,7 @@
 <template>
   <div v-show="props.show" class="background" @click.stop="emit('hide')">
     <section class="popup" @click.stop="">
-      <img src="img/close.png" alt="закрыть" class="close" @click.stop="emit('hide')">
+      <img src="/img/close.png" alt="закрыть" class="close" @click.stop="emit('hide')">
       <div v-show="error" class="errors">
         {{ error }}
       </div>
@@ -52,7 +52,7 @@ const current = ref(3)
 
 useFetch(async () => {
   const { data } = await $axios.get('/product/getAll')
-  products.value = data
+  products.value = data.sort((a, b) => a.id - b.id)
 })
 const change = (value) => {
   current.value = value
@@ -221,6 +221,66 @@ const format = (value) => {
     //border-radius: 16px;
 
     margin-top: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .popup {
+    width: 90vw;
+    left: calc(30vw - 25%);
+    padding: 2.564102564102564vw 2.564102564102564vw 3.8461538461538463vw 2.564102564102564vw;
+
+    .close {
+      width: 2.564102564102564vw;
+      height: 2.564102564102564vw;
+      right: 2.564102564102564vw;
+      top: 2.564102564102564vw;
+    }
+
+    .errors {
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 4.2897435897435894vw;
+      margin-bottom: 20px;
+    }
+
+    .tariffs {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .tariff {
+        label {
+          margin-bottom: 20px;
+          width: 36.375vw;
+          height: 19.25vw;
+          border: 2px solid rgba(0, 0, 0, 0.2);
+          padding: 0.625vw 1.5vw 0.8125vw;
+
+          .name {
+            width: 100%;
+            font-size: 5.5vw;
+          }
+
+          .price {
+            width: 100%;
+            font-size: 5.75vw;
+          }
+        }
+      }
+    }
+
+    .button {
+      padding: 2.564102564102564vw 1.282051282051282vw 3.5897435897435894vw;
+      font-size: 5.641025641025641vw;
+
+      width: 100%;
+      height: 14.871794871794872vw;
+
+      margin-top: 20px;
+    }
   }
 }
 </style>

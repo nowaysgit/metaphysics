@@ -1,4 +1,5 @@
 import UserService from '../services/UserService.js'
+import EmailService from '../services/EmailService.js'
 import UserDto from '../dtos/UserDto.js'
 import ApiError from '../exeptions/ApiError.js'
 
@@ -38,7 +39,7 @@ class UserController {
       const userData = await UserService.Activate(req.params.code)
       res.cookie('refreshToken', userData.RefreshToken, { maxAge: 30 * 24 * 60 * 1000, httpOnly: true })
       res.cookie('accessToken', userData.AccessToken, { maxAge: 30 * 60 * 1000, httpOnly: false })
-      return res.json(userData)
+      return res.redirect('/')
     } catch (e) {
       return next(e)
     }
@@ -62,7 +63,6 @@ class UserController {
       if (!req.cookies.refreshToken) { return next(ApiError.Unauthorized()) }
       const refreshToken = req.cookies.refreshToken
       const userData = await UserService.Refresh(refreshToken)
-      res.cookie('refreshToken', userData.RefreshToken, { maxAge: 30 * 24 * 60 * 1000, httpOnly: true })
       res.cookie('accessToken', userData.AccessToken, { maxAge: 30 * 60 * 1000, httpOnly: false })
       return res.json(userData)
     } catch (e) {
@@ -73,6 +73,15 @@ class UserController {
   static async GetAuthUser (req, res, next) {
     try {
       return res.json(await new UserDto(await UserService.GetById(req.user.id)))
+    } catch (e) {
+      return next(e)
+    }
+  }
+
+  static async SendRecordEmail (req, res, next) {
+    try {
+      await EmailService.SendRecordEmail(req.body.email)
+      return res.status(200).json('OK')
     } catch (e) {
       return next(e)
     }

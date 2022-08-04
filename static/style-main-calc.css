@@ -22,8 +22,8 @@
 /*body { min-width: 960px; }
 .container { width: 960px; max-width: none !important; }*/
 
-.china-name, .pillar-china-name, .hidden-stem-horizontal-china-name, .hidden-stem-vertical-china-name, 
-.years-china-name, .sym-stars-china-name, .nai-element, .lumin-china-name { 
+.china-name, .pillar-china-name, .hidden-stem-horizontal-china-name, .hidden-stem-vertical-china-name,
+.years-china-name, .sym-stars-china-name, .nai-element, .lumin-china-name {
   font-family: ZenKaiUniv;
   vertical-align: middle;
   line-height: 1.1em;
@@ -67,11 +67,11 @@ h3 {font-size: 16px; }
 .data-form {
 /*	margin: 0px auto 15px;
 	text-align: center;*/
-	color: red !important;
+	color: black !important;
 }
 .data-form .form-row {
 	margin-bottom: 10px;
-	color: red !important;
+	color: black !important;
 }
 .data-form .btn {
 	width: 126px;
@@ -101,24 +101,24 @@ h3 {font-size: 16px; }
 }
 .four-pillars-table td, .year-period-table td
 {
-	padding: 0px; 
+	padding: 0px;
 	border: 1px solid black;
 	vertical-align: top;
 	text-align: center;
-	/*width: 25%;*/ 
-	width: 85px;	
+	/*width: 25%;*/
+	width: 85px;
 	font-size: 16px;
 }
 .sym-stars-table {
-	width: 772px; 
-	margin: auto; 
+	width: 772px;
+	margin: auto;
 	text-align: left;
 	font-size: 15px;
 }
 .sym-stars
 {
 	font-size: 15px;
-}	
+}
 .sym-stars-left
 {
 	/*padding-left: 30px;*/
@@ -152,7 +152,7 @@ h3 {font-size: 16px; }
 {
 	font-size: 11px;
 	padding: 3px 2px;
-	border-top: 1px solid black;	
+	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 	/*cursor: pointer;*/
 }
@@ -175,7 +175,7 @@ h3 {font-size: 16px; }
 }
 .hidden-stem-horizontal-china-name .born-hidden-stem
 {
-	letter-spacing: 0.1em;	
+	letter-spacing: 0.1em;
 	font-size: 18px;
 	height: 18px;
 }
@@ -187,14 +187,14 @@ h3 {font-size: 16px; }
 }
 .luck-pillars-table td
 {
-	padding: 0px; 
+	padding: 0px;
 	border: 1px solid black;
 	text-align: center;
 	vertical-align: middle;
 	width: 85px;
 	font-size: 13px;
 }
-.luck-pillars-table .pillar-china-name 
+.luck-pillars-table .pillar-china-name
 {
 	font-size: 40px;
 	height: 40px;
@@ -222,7 +222,7 @@ h3 {font-size: 16px; }
 {
 	position: absolute;
 	top: 3px;
-	right: 4px;		
+	right: 4px;
 	line-height: 10px;
 	font-size: 13px;
 	font-weight: bold;
@@ -233,11 +233,11 @@ h3 {font-size: 16px; }
 	padding: 3px 2px;
 	/*cursor: pointer;*/
 }
-.sym-stars-row td 
+.sym-stars-row td
 {
 	vertical-align: top;
 }
-.years-table td 
+.years-table td
 {
 	border: none;
 	/*border-bottom: 1px solid black;*/
@@ -275,8 +275,8 @@ h3 {font-size: 16px; }
 	margin-bottom: 10px;
 }
 .lumin img {
-  position: absolute; 
-  left:0; 
+  position: absolute;
+  left:0;
   top:0;
 }
 .lumin .lumin-china-name
@@ -445,7 +445,7 @@ html > body #PenetratingYang {
 		zoom: 0.9;
 		-ms-zoom: 0.9;
 		-webkit-zoom: 0.9;
-	}	
+	}
 	table
   {
 		 margin: 0;

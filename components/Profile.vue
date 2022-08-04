@@ -1,7 +1,7 @@
 <template>
   <div v-show="props.show" class="background" @click.stop="emit('hide')">
     <section class="popup" @click.stop="">
-      <img src="img/close.png" alt="закрыть" class="close" @click.stop="emit('hide')">
+      <img src="/img/close.png" alt="закрыть" class="close" @click.stop="emit('hide')">
       <div :class="access ? 'tariff pro' : 'tariff standard'" @click="ToPro">
         <div class="info">
           <p :class="access ? 'name pro' : 'name standard'">
@@ -14,7 +14,7 @@
             Получите доступ сейчас
           </p>
         </div>
-        <img :src="access ? 'img/arrowRightWhite.png' : 'img/arrowRightBlack.png'" alt=">">
+        <img :src="access ? '/img/arrowRightWhite.png' : '/img/arrowRightBlack.png'" alt=">">
       </div>
       <div class="buttons">
         <a class="button help" href="https://www.vk.com/" target="_blank">Написать в поддержку</a>
@@ -162,6 +162,47 @@ const Logout = () => {
     .exit {
       color: #F04438;
       margin-top: 16px;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .popup {
+    right: 5.128205128205128vw;
+    width: 89.74358974358975vw;
+    top: 72px;
+
+    .close {
+      width: 15px;
+      height: 15px;
+      right: 7px;
+      top: 7px;
+    }
+
+    .title {
+      font-size: 5.153846153846154vw;
+    }
+
+    .subtitle {
+      font-size: 3.615384615384616vw;
+
+      margin-top: 5.128205128205128vw;
+    }
+
+    .text {
+      font-size: 3.615384615384616vw;
+
+      margin-top: 1.0256410256410255vw;
+    }
+
+    .button {
+      font-size: 3.615384615384616vw;
+      padding: 3.615384615384616vw 1.564102564102564vw 4.128205128205128vw;
+      height: 13.64102564102564vw;
+    }
+
+    .politics {
+      font-size: 2.8205128205128207vw;
+      margin-top: 7.6923076923076925vw;
     }
   }
 }

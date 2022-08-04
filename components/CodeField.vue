@@ -55,11 +55,14 @@ const success = () => {
   font-size: 20px;
   line-height: 130%;
   letter-spacing: -0.33px;
-  color: rgba(0, 0, 0, 0.3);
+  color: black;
 
   border: 0;
 
   margin-top: 30px;
+}
+.input ::placeholder {
+  color: rgba(0, 0, 0, 0.3);
 }
 .input:active, :focus {
   outline: 0;
@@ -91,5 +94,11 @@ const success = () => {
   color: #F04438;
   margin-top: 12px;
   margin-bottom: 26px;
+}
+@media (max-width: 400px) {
+  .input {
+    font-size: 5.128205128205128vw;
+    margin-top: 7.6923076923076925vw;
+  }
 }
 </style>

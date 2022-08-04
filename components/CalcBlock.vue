@@ -1,10 +1,10 @@
 <template>
   <div class="block">
-    <div class="title">
-      {{ props.title }}
-    </div>
+    <Calc :name="props.calc" />
     <div class="info">
-      <Calc :name="props.calc" />
+      <div class="title">
+        {{ props.title }}
+      </div>
       <div class="description" v-html="props.description" />
     </div>
   </div>
@@ -30,31 +30,57 @@ const props = defineProps({
 <style lang="scss" scoped>
 .block {
   display: flex;
-  flex-direction: column;
-  .title {
-    margin-bottom: 80px;
+  flex-direction: row;
 
-    font-style: normal;
-    font-weight: 500;
-    font-size: 44px;
-    line-height: 140%;
-    letter-spacing: -0.98px;
-    color: #000000;
-  }
   .info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-left: 80px;
+
+    .title {
+      margin-bottom: 30px;
+
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 130%;
+      letter-spacing: -0.01em;
+      color: #000000;
+    }
 
     .description {
-      width: 43.75vw;
-      margin-left: 200px;
+      width: 820px;
 
       font-style: normal;
       font-weight: 400;
-      font-size: 24px;
-      line-height: 160%;
-      letter-spacing: -0.47px;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: -0.26px;
       color: #000000;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .block {
+    display: flex;
+    flex-direction: column;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0;
+      margin-top: 40px;
+
+      .title {
+        margin-bottom: 40px;
+        font-size: 6.153846153846154vw;
+      }
+
+      .description {
+        width: 100%;
+        font-size: 3.8461538461538463vw;
+      }
     }
   }
 }

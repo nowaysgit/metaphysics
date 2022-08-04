@@ -1,6 +1,6 @@
 <template>
   <div class="calc">
-    <iframe style="width: 300px; height: 400px; border: none; overflow: hidden;" :src="link" />
+    <iframe class="size" style="border: none; overflow: hidden;" :src="link" />
   </div>
 </template>
 
@@ -14,12 +14,23 @@ const props = defineProps({
   }
 })
 const link = computed(
-  () => 'http://localhost:8080/api/calc/get' + props.name
+  () => 'https://piancai.ru/api/calc/get' + props.name
 )
 </script>
 
 <style lang="scss" scoped>
-.calc {
-
+.size {
+  width: 300px;
+  height: 400px;
+}
+@media (max-width: 1200px) {
+  .calc {
+    display: flex;
+    justify-content: center;
+    .size {
+      width: 76.92307692307693vw;
+      height: 102.56410256410255vw;
+    }
+  }
 }
 </style>

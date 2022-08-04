@@ -38,8 +38,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/composition-api/module',
-    '@nuxtjs/ngrok'
+    '@nuxtjs/composition-api/module'
+    // '@nuxtjs/ngrok'
   ],
 
   ngrok: {

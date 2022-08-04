@@ -33,9 +33,17 @@ class TokenService {
 
   static async MakeNewToken (user) {
     const userDto = new UserDto(user)
-    const tokens = await this.#GenerateTokens({ ...userDto })
-    await this.#SaveToken(user.email, tokens.RefreshToken)
-    return { ...tokens, user: userDto }
+    const tokenData = await Token.findOne({ where: { userEmail: user.email } })
+    const userData = await TokenService.ValidateRefreshToken(tokenData.refreshToken)
+    if (!tokenData && !userData) {
+      const tokens = await this.#GenerateTokens({ ...userDto })
+      await this.#SaveToken(user.email, tokens.RefreshToken)
+      return { ...tokens, user: userDto }
+    } else {
+      const userDto = new UserDto(user)
+      const accessToken = jwt.sign({ ...userDto }, process.env.JWT_ACCESS_SECRET, { expiresIn: '10m' })
+      return { AccessToken: accessToken, RefreshToken: tokenData.refreshToken, user: userDto }
+    }
   }
 
   static async ValidateAccessToken (token) {

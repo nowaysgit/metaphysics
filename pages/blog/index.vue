@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="btitle">
-      Читайте мой блог
+      мой блог
     </p>
     <section v-if="posts" class="posts">
       <div v-for="post in posts" :key="post.id" class="post">
@@ -10,7 +10,7 @@
           {{ post.title }}
         </NuxtLink>
         <p class="date">
-          {{ `${new Date(post.date).getDay()} ${month[new Date(post.date).getMonth()]} ${new Date(post.date).getFullYear()}` }}
+          {{ `${new Date(post.date).getDay()+1} ${month[new Date(post.date).getMonth()]} ${new Date(post.date).getFullYear()}` }}
         </p>
       </div>
     </section>
@@ -73,6 +73,13 @@ export default defineComponent({
 
   margin-bottom: 80px;
 }
+@media (max-width: 1200px) {
+  .btitle {
+    font-size: 8.205128205128204vw;
+
+    margin-bottom: 40px;
+  }
+}
 .posts {
   display: flex;
   flex-direction: row;
@@ -110,14 +117,14 @@ export default defineComponent({
     .title:before {
       content: '…';
       position: absolute;
-      right: 0;
+      right: 30px;
       bottom: 0;
     }
 
     .title:after {
       content: "";
       position: absolute;
-      right: 0;
+      right: 20px;
       width: 1em;
       height: 1em;
       margin-top: 0.2em;
@@ -134,6 +141,30 @@ export default defineComponent({
       color: rgba(0, 0, 0, 0.4);
 
       margin-top: 10px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .posts {
+    .post {
+      margin-bottom: 40px;
+
+      .image {
+        width: 89.74358974358975vw;
+        height: 64.1025641025641vw;
+      }
+
+      .title {
+        font-size: 4.358974358974359vw;
+        margin-top: 20px;
+        max-width: 89.74358974358975vw;
+        max-height: 16.923076923076923vw;
+      }
+
+      .date {
+        font-size: 3.8461538461538463vw;
+        margin-top: 10px;
+      }
     }
   }
 }

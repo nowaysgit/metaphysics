@@ -1,7 +1,7 @@
 <template>
   <div v-show="props.show" class="background" @click.stop="emit('hide')">
     <section class="popup" @click.stop="">
-      <img src="img/close.png" alt="закрыть" class="close" @click.stop="emit('hide')">
+      <img src="/img/close.png" alt="закрыть" class="close" @click.stop="emit('hide')">
       <div v-if="!invalid" class="title">
         Войти или зарегестрироваться
       </div>
@@ -107,8 +107,6 @@ const ToPolitics = () => {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
-  height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
 }
 .popup {
@@ -195,6 +193,49 @@ const ToPolitics = () => {
 
     .link {
       cursor: pointer;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .popup {
+    width: 89.74358974358975vw;
+    height: 89.74358974358975vw;
+    right: 5.128205128205128vw;
+    top: 72px;
+    padding: 30px 30px 45px 30px;
+
+    .close {
+      width: 15px;
+      height: 15px;
+      right: 20px;
+      top: 20px;
+    }
+
+    .title {
+      font-size: 5.153846153846154vw;
+    }
+
+    .subtitle {
+      font-size: 3.615384615384616vw;
+
+      margin-top: 5.128205128205128vw;
+    }
+
+    .text {
+      font-size: 3.615384615384616vw;
+
+      margin-top: 1.0256410256410255vw;
+    }
+
+    .button {
+      font-size: 3.615384615384616vw;
+      padding: 3.615384615384616vw 1.564102564102564vw 4.128205128205128vw;
+      height: 13.64102564102564vw;
+    }
+
+    .politics {
+      font-size: 2.8205128205128207vw;
+      margin-top: 7.6923076923076925vw;
     }
   }
 }

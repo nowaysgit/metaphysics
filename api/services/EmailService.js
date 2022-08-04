@@ -34,6 +34,24 @@ class EmailService {
                 `
     })
   }
+
+  async SendRecordEmail (from) {
+    await this.transporter.sendMail({
+      from: process.env.SMTP_USER,
+      to: process.env.ADMIN_MAIL,
+      subject: 'Новая запись',
+      text: '',
+      html:
+                `
+                <div>
+                    <h1>Новая запись</h1>
+                </div>
+                <div>
+                    <h1>Адрес: ${from}</h1>
+                </div>
+                `
+    })
+  }
 }
 
 export default new EmailService()

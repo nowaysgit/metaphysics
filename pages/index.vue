@@ -1,37 +1,42 @@
 <template>
   <div>
     <section class="info">
-      <div class="title">
-        Студия китайской метафизики Светы Шарновой
-      </div>
-      <div class="description">
-        Желаете, чтобы ваша жизнь заиграла новыми красками?<br> Запишитесь на <u>бесплатную онлайн-консультацию!</u>
+      <div class="container">
+        <div class="title">
+          Студия китайской метафизики Светы Шарновой
+        </div>
+        <div class="description">
+          Желаете, чтобы ваша жизнь заиграла новыми красками? Запишитесь на <u style="cursor: pointer;" @click="ToEmail">бесплатную онлайн-консультацию!</u>
+        </div>
       </div>
     </section>
-    <hr style="padding-top: calc(100vh - 200px); border: 0;">
+    <hr class="zatichka">
     <section class="about">
       <div class="title">
-        Всем привет! Меня зовут Светлана. Я специалист, знающий как правильно управлять своей жизнью, привлекать к себе удачу и благополучие!
+        Всем привет! Меня зовут Светлана. Я специалист, знающий как <em class="italics">правильно управлять своей жизнью, привлекать к себе удачу и благополучие!<em />
+        </em>
       </div>
       <div class="content">
-        <img src="img/indexAbout.png" alt="About Image" class="image">
+        <img src="/img/indexAbout.png" alt="About Image" class="image">
         <div class="info1">
           <p class="text1">
             Я консультант / наставник по Фэн-шуй и БаЦзы, который помогает получить желаемое в карьере и личной жизни. Со мной вы сможете реализовать себя как личность, жить в комфорте, заниматься любимым делом и проводить отпуск с наслаждением.
           </p>
           <div class="stats">
             <div class="stat">
-              <p class="text2">
+              <div class="text2">
                 Более 12 лет!
-              </p>
+                <hr class="line1">
+              </div>
               <p class="text1">
-                Изучаю метафизику
+                Изучаю метафизику
               </p>
             </div>
             <div class="stat">
-              <p class="text2">
+              <div class="text2">
                 380+
-              </p>
+                <hr class="line2">
+              </div>
               <p class="text1">
                 Клиентов
               </p>
@@ -48,43 +53,60 @@
         Я СЕРТИФИЦИРОВАННЫЙ СПЕЦИАЛИСТ!
       </div>
       <div class="content">
-        <img src="img/sertificates/1.png" alt="About Image" class="image">
-        <img src="img/sertificates/2.png" alt="About Image" class="image">
-        <img src="img/sertificates/3.png" alt="About Image" class="image">
-        <img src="img/sertificates/4.png" alt="About Image" class="image">
-        <img src="img/sertificates/5.png" alt="About Image" class="image">
-        <img src="img/sertificates/6.png" alt="About Image" class="image">
-        <img src="img/sertificates/7.png" alt="About Image" class="image">
-        <img src="img/sertificates/8.png" alt="About Image" class="image">
+        <img src="/img/sertificates/1.png" alt="About Image" class="image">
+        <img src="/img/sertificates/2.png" alt="About Image" class="image">
+        <img src="/img/sertificates/3.png" alt="About Image" class="image">
+        <img src="/img/sertificates/4.png" alt="About Image" class="image">
+        <img src="/img/sertificates/5.png" alt="About Image" class="image">
+        <img src="/img/sertificates/6.png" alt="About Image" class="image">
+        <img src="/img/sertificates/7.png" alt="About Image" class="image">
+        <img src="/img/sertificates/8.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/9.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/10.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/11.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/12.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/13.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/14.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/15.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/16.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/17.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/18.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/19.png" alt="About Image" class="image">
+        <img v-show="showCertificates" src="/img/sertificates/20.png" alt="About Image" class="image2">
+        <img v-show="showCertificates" src="/img/sertificates/21.png" alt="About Image" class="image2">
       </div>
       <div class="center">
-        <NuxtLink class="button" to="/certificates">
-          Показать больше
-        </NuxtLink>
+        <button class="button" @click="ToggleCertificates">
+          {{ showCertificates ? 'Скрыть' : 'Показать больше' }}
+        </button>
       </div>
       <p class="subDescription">
         Одна из ключевых причин, по которой я начала изучать БаЦзы и Фэн-шуй — чтобы лучше понять и узнать себя. Почему периодами даётся все легко, а потом настругает пауза? Это долгосрочный эффект или временное везение? Что я могу сделать, чтобы добиться лучшего результата?
       </p>
     </section>
     <section class="metaphysics-about">
-      <img src="img/indexMetaphysicsAbout1.png" alt="About Image" class="image">
+      <img src="/img/indexMetaphysicsAbout1.png" alt="About Image" class="image">
       <div class="description">
         Возможно, вы не поверите, но почти за каждым успешным человеком стоят сильные метафизические специалисты. Люди редко добиваются успеха только благодаря силе и удаче.
       </div>
-      <div class="title" style="margin-top: 361px;">
-        Китайская метафизика основана на поиске Ци — чистой энергии, дающей жизнь всему живому
+      <div class="title">
+        Китайская метафизика основана на поиске Ци — <em class="italics">чистой энергии, дающей жизнь всему живому<em />
+          <hr class="line">
+        </em>
       </div>
       <div class="description">
         Ци — это невидимые энергетические потоки, концентрирующиеся в определенных точках времени и пространства. Умение улавливать их можно сравнить с удачей или тем явлением, о котором мы привыкли говорить: «Оказаться в нужное время в нужном месте».
       </div>
       <div class="doubleImage">
-        <img src="img/indexMetaphysicsAbout3.png" alt="About Image" class="image first">
-        <img src="img/indexMetaphysicsAbout2.png" alt="About Image" class="image">
+        <img src="/img/indexMetaphysicsAbout3.png" alt="About Image" class="image first">
+        <img src="/img/indexMetaphysicsAbout2.png" alt="About Image" class="image">
       </div>
     </section>
     <section class="metaphysics-techniques">
       <div class="title">
-        Каждая из техник китайской метафизики открывает перед вами мир безграничных возможностей!
+        Каждая из техник китайской метафизики открывает перед вами <em class="italics">мир безграничных возможностей!<em />
+          <hr class="line">
+        </em>
       </div>
       <div class="description">
         Учение о Ци — ключ к успеху и удаче в делах, обретению своего призвания, формированию надёжного окружения и уверенному развитию бизнеса.
@@ -95,30 +117,30 @@
       <div class="description">
         С помощью техник Фэн Шуй, Сань Хе, Сань Юань, Водных формул и БаЧжай вы сможете создать дом мечты, в котором царит только гармония и благополучие.
       </div>
-      <img src="img/indexMetaphysicsAbout4.png" alt="About Image" class="image">
+      <img src="/img/indexMetaphysicsAbout4.png" alt="About Image" class="image">
       <div class="description2">
         «Жизнь слишком коротка — обретайте то, чего достойны!»
         <p class="name">
-          Света Шарнова
+          Света Шарнова / Основатель студии «Pian Cai»
         </p>
       </div>
       <div class="circle">
-        <p class="dignity" style="margin-left: 260px;">
+        <p class="dignity m1">
           Любовь
         </p>
-        <p class="dignity" style="margin-left: 148px; margin-right: 200px;">
+        <p class="dignity m2">
           Красота
         </p>
-        <p class="dignity" style="margin-top: 110px;">
+        <p class="dignity m3">
           Дружба
         </p>
-        <p class="dignity" style="margin-top: 48px; margin-left: 734px;">
+        <p class="dignity m4">
           Бизнес
         </p>
-        <p class="dignity" style="margin-top: 176px; margin-left: 260px;">
+        <p class="dignity m5">
           Здоровье
         </p>
-        <p class="dignity" style="margin-top: 156px; margin-left: 151px;">
+        <p class="dignity m6">
           Долголетие
         </p>
         <p class="text">
@@ -126,117 +148,82 @@
         </p>
       </div>
     </section>
-    <section class="email">
-      <p class="title">
-        Желаете, чтобы ваша жизнь <em class="italics">заиграла новыми красками?</em>
-      </p>
-      <p class="description">
-        Запишитесь на <em class="italics">БЕСПЛАТНУЮ</em> онлайн-встречу!<br>Введите свой адрес электронной почты и я свяжусь с вами!
-      </p>
-      <div class="block">
-        <p class="arrowText">
-          -->
-        </p>
-        <input type="email" placeholder="example@example.com" class="email">
-        <hr class="line">
-      </div>
-    </section>
-    <section class="pro">
-      <p class="text">
-        Раскодируйте дату своего рождения, исходя из комбинаций ветвей символов и элементов Инь и ян, и узнайте о себе всё!
-      </p>
-      <NuxtLink class="link" to="/pro">
-        Подробнее
-      </NuxtLink>
-    </section>
-    <section class="blog">
-      <p class="title">
-        Читайте мой блог
-      </p>
-      <div class="content">
-        <div v-for="post in posts" :key="post.id" class="post">
-          <NuxtLink class="title" :to="`/blog/${post.id}`">
-            {{ post.title }}
-          </NuxtLink>
-          <p class="date">
-            {{ `${new Date(post.date).getDay()} ${month[new Date(post.date).getMonth()]} ${new Date(post.date).getFullYear()}` }}
-          </p>
-        </div>
-      </div>
-    </section>
+    <Email />
+    <Pro />
+    <OtherPosts />
   </div>
 </template>
 
 <script>
-import { useMeta, defineComponent, ref, useFetch, useContext } from '@nuxtjs/composition-api'
+import { useMeta, defineComponent, ref, onMounted } from '@nuxtjs/composition-api'
 export default defineComponent({
   setup () {
-    const { $axios } = useContext()
-    const posts = ref([])
-
-    const month = [
-      'Январь',
-      'Февраль',
-      'Март',
-      'Апрель',
-      'Май',
-      'Июнь',
-      'Июль',
-      'Август',
-      'Сентябрь',
-      'Ноябрь',
-      'Декабрь'
-    ]
-
-    useFetch(async () => {
-      const { data } = await $axios.get('/blog/getAll?count=3')
-      posts.value = data
-    })
-
+    const showCertificates = ref(false)
     useMeta({
       title: 'PIAN CIA'
     })
-
-    return { month, posts }
+    const ToEmail = () => {
+      console.log('LOL')
+      const el = document.getElementById('email')
+      el.scrollIntoView({ block: 'end', inline: 'center', behavior: 'smooth' })
+    }
+    const ToggleCertificates = () => {
+      showCertificates.value = !showCertificates.value
+    }
+    onMounted(() => {
+      if (process.client) {
+        showCertificates.value = window.innerWidth < 1200
+      }
+      window.onresize = () => {
+        showCertificates.value = window.innerWidth < 1200
+      }
+    })
+    return { ToEmail, showCertificates, ToggleCertificates }
   },
   head: {}
 })
 </script>
 
 <style lang="scss" scoped>
+.line {
+  height: 8px;
+  background: #F8A577;
+  border: 0;
+  position: absolute;
+  margin-top: -13px;
+  margin-left: 1px;
+  z-index: -1;
+}
 .info {
-  height: 100vh;
+  height: 900px;
   width: 99vw;
   left: 0;
   right: 0;
+  top: 200px;
   position: absolute;
   z-index: -1;
   margin-top: -200px;
   background-image: url('/img/indexStart.png');
   background-size: cover;
+  display: flex;
+  justify-content: center;
 
   .title {
     font-family: 'Lato';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 90px;
     line-height: 115%;
     letter-spacing: 0.01em;
     text-transform: uppercase;
 
-    padding-left: 12.5vw;
-    padding-right: 12.5vw;
     padding-top: 240px;
     max-width: 1200px;
 
     color: #FFFFFF;
   }
-  @media (max-width: 600px){
-    .title {
-      font-size: 7.25vw;
-    }
-  }
   .description {
+    max-width: 580px;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -245,13 +232,40 @@ export default defineComponent({
     color: #FFFFFF;
 
     margin-top: 60px;
-    padding-left: 12.5vw;
-    padding-right: 12.5vw;
   }
-  @media (max-width: 600px){
-    .description {
-      font-size: 4.25vw;
+}
+.zatichka {
+  padding-top: 700px;
+  border: 0;
+}
+@media (max-width: 1200px) {
+  .info {
+    height: 220px;
+    width: 99.8vw;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-image: url('/img/indexStart.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+    .title {
+      font-size: 7.905128205128204vw;
+      color: black;
     }
+
+    .description {
+      font-size: 3.8461538461538463vw;
+      margin-top: 20px;
+      letter-spacing: -0.36px;
+      color: black;
+    }
+  }
+  .zatichka {
+    padding-top: 200px;
+    border: 0;
   }
 }
 
@@ -261,20 +275,22 @@ export default defineComponent({
   .title {
     font-family: 'Lato';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 40px;
     line-height: 130%;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
     text-transform: uppercase;
     color: #000000;
-
-    display: flex;
-    align-items: center;
     width: 100%;
+
+    .italics {
+      font-style: italic;
+      font-weight: 600;
+    }
   }
-  @media (max-width: 600px){
+  @media (max-width: 1200px){
     .title {
-      font-size: 6.125vw;
+      font-size: 6.153846153846154vw;
     }
   }
   .content {
@@ -311,6 +327,18 @@ export default defineComponent({
         color: #000000;
 
         margin-bottom: 5px;
+        .line1 {
+          width: 205px; background: #F8A577;
+          height: 8px;
+          border: 0;
+          margin-top: -10px;
+        }
+        .line2 {
+          width: 77px; background: #F8A577;
+          height: 8px;
+          border: 0;
+          margin-top: -10px;
+        }
       }
       .stats {
         display: flex;
@@ -327,27 +355,59 @@ export default defineComponent({
       }
     }
   }
-  @media (max-width: 600px){
+  @media (max-width: 1200px){
     .content {
 
       .image {
-        width: 100%;
-        height: auto;
+        width: 89.74358974358975vw;
+        height: 54.61538461538461vw;
+        object-fit: cover;
       }
-      .info {
+      .info1 {
         width: 100%;
         margin-left: 0;
 
         .text1 {
           font-size: 3.7vw;
+          margin-top: 5px;
         }
         .text2 {
           font-size: 4.75vw;
-          margin-top: 10vw;
-          margin-bottom: 10vw;
+          margin-top: 30px;
+          margin-bottom: 0;
+
+          .line1 {
+            width: 29.8205128205vw; background: #F8A577;
+            height: 6px;
+            border: 0;
+            margin-top: -8px;
+          }
+          .line2 {
+            width: 11.3846153846vw; background: #F8A577;
+            height: 6px;
+            border: 0;
+            margin-top: -8px;
+          }
+        }
+        .stats {
+          display: flex;
+          flex-direction: row;
+
+          margin-top: 30px;
+          margin-bottom: 35px;
+          .stat {
+            display: flex;
+            flex-direction: column;
+            margin-right: 21.28205128205128vw;
+          }
         }
       }
     }
+  }
+}
+@media (max-width: 1200px) {
+  .about {
+    margin-top: 250px;
   }
 }
 
@@ -374,6 +434,11 @@ export default defineComponent({
 
     .image {
       width: 270px;
+      height: 387px;
+      margin-bottom: 40px;
+    }
+    .image2 {
+      width: 541px;
       height: 387px;
       margin-bottom: 40px;
     }
@@ -405,26 +470,38 @@ export default defineComponent({
     margin-top: 140px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .certificates {
-    margin-top: 25vw;
+    margin-top: 100px;
 
     .title {
       font-size: 6.125vw;
     }
 
     .content {
-      margin-top: 12.5vw;
+      margin-top: 40px;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
 
       .image {
-        width: 22.5vw;
-        height: 32.1875vw;
-        margin-bottom: 60px;
+        width: 69.23076923076923vw;
+        height: 99.23076923076923vw;
+        margin-bottom: 0;
+        margin-right: 5.128205128205128vw;
+        object-fit: cover;
+      }
+      .image2 {
+        width: 138.7179487179487vw;
+        height: 99.23076923076923vw;
+        margin-bottom: 0;
+        margin-right: 5.128205128205128vw;
+        object-fit: cover;
       }
     }
 
     .center {
       margin-top: 7.5vw;
+      display: none;
 
       .button {
         font-size: 2.75vw;
@@ -432,6 +509,12 @@ export default defineComponent({
         margin-top: 10vw;
       }
     }
+    .subDescription {
+        font-size: 4.358974358974359vw;
+        margin-top: 100px;
+        letter-spacing: -0.47px;
+        padding: 0;
+      }
   }
 }
 
@@ -448,6 +531,30 @@ export default defineComponent({
     text-transform: uppercase;
     color: #000000;
     weight: 100%;
+    margin-top: 361px;
+
+    .italics {
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .line {
+      width: 1110px;
+      background: #FFB577;
+      height: 8px;
+      border: 0;
+      margin-top: -15px;
+    }
+
+    @media(max-width: 1200px) {
+      .line {
+        width: 28.46153846153846vw;
+        background: #FFB577;
+        height: 6px;
+        border: 0;
+        margin-top: -10px;
+      }
+    }
   }
   .description {
     font-style: normal;
@@ -480,30 +587,35 @@ export default defineComponent({
     height: 440px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .metaphysics-about {
-    margin-top: 25vw;
+    margin-top: 100px;
 
     .title {
-      font-size: 6.125vw;
+      margin-top: 100px;
+      font-size: 6.153846153846154vw;
 
       .italics {
-        font-size: 6.125vw;
+        font-size: 6.153846153846154vw;
       }
     }
 
     .description {
-      font-size: 3.5vw;
-      width: 70.75vw;
-      float: right;
-      margin-top: 15vw;
+      font-size: 3.8461538461538463vw;
+      width: 100%;
+      float: none;
+      margin-top: 30px;
+      color: #000000;
     }
     .doubleImage {
-      margin-top: 115px;
+      margin-top: 40px;
+      flex-direction: column;
 
       .image {
-        width: 36.25vw;
-        height: 27.5vw;
+        width: 89.74358974358975vw;
+        height: 46.15384615384615vw;
+        margin-bottom: 20px;
+        object-fit: cover;
       }
       .first {
         margin-top: 60px;
@@ -512,11 +624,11 @@ export default defineComponent({
 
     .image {
       width: 100%;
-      height: 28.75vw;
+      height: 46.15384615384615vw;
+      object-fit: cover;
     }
   }
 }
-
 .metaphysics-techniques {
   margin-top: 180px;
   display: flex;
@@ -528,12 +640,26 @@ export default defineComponent({
     font-weight: 500;
     font-size: 58px;
     line-height: 130%;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
     text-transform: uppercase;
     color: #000000;
 
     width: 100%;
     margin-bottom: 30px;
+
+    .italics {
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .line {
+      width: 1195px;
+      background: #62D6E1;
+      height: 8px;
+      border: 0;
+      margin-top: -20px;
+
+    }
   }
   .description {
     font-style: normal;
@@ -600,6 +726,28 @@ export default defineComponent({
       max-height: 72px;
       box-sizing: border-box;
     }
+    .m1 {
+        margin-left: 260px;
+      }
+      .m2 {
+        margin-left: 148px;
+        margin-right: 200px;
+      }
+      .m3 {
+        margin-top: 110px;
+      }
+      .m4 {
+        margin-top: 48px;
+        margin-left: 734px;
+      }
+      .m5 {
+        margin-top: 176px;
+        margin-left: 260px;
+      }
+      .m6 {
+        margin-top: 156px;
+        margin-left: 151px;
+      }
     .text {
       font-family: 'Inter';
       font-style: normal;
@@ -659,212 +807,77 @@ export default defineComponent({
     }
   }
 }
-
-.email {
-  display: flex;
-  flex-direction: column;
-  margin-top: 220px;
-
-  .title {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 70px;
-    line-height: 130%;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-    color: #000000;
-    .italics {
-      font-style: italic;
-      font-weight: 500;
-    }
-  }
-  .description {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 150%;
-    letter-spacing: -0.26px;
-    color: #000000;
-
+@media(max-width: 1200px) {
+  .metaphysics-techniques {
     margin-top: 80px;
-    margin-left: 620px;
+    .title {
+      font-size: 6.153846153846154vw;
+      margin-bottom: 0;
 
-    .italics {
-      font-style: italic;
-      font-weight: 600;
+      .line {
+        width: 54.35897435897436vw;
+        background: #62D6E1;
+        height: 8px;
+        border: 0;
+        margin-top: -10px;
+      }
     }
-  }
-  .block {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: row-reverse;
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    .email {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 70px;
-      line-height: 130%;
-      letter-spacing: -1.56px;
-
-      color: rgba(0, 0, 0, 0.3);
-
-      border: 0;
-
-      margin-top: 100px;
-    }
-    .arrowText {
-      font-weight: 500;
-      font-size: 70px;
-      line-height: 130%;
-
-      cursor: pointer;
-    }
-    .email:active, :focus {
-      outline: 0;
-      border: 0;
-
-      color: rgba(0, 0, 0, 1);
-    }
-    .email:hover {
-      outline: 0;
-      border: 0;
-    }
-    .line {
+    .description {
       margin-top: 30px;
-      border-top: 3px solid rgba(0, 0, 0, 0.3);
-      width: 100%;
+      font-size: 3.8461538461538463vw;
+      margin-left: 0;
     }
-    .input:active, :focus + .line {
-      outline: 0;
-      border-top: 3px solid rgba(0, 0, 0, 0.7);
+    .image {
+      width: 89.74358974358975vw;
+      height: 51.28205128205128vw;
+      margin-top: 40px;
+      object-fit: cover;
     }
-    .input:hover + .line {
-      outline: 0;
-      border-top: 3px solid rgba(0, 0, 0, 1);
-    }
-  }
-}
-
-.pro {
-  margin-top: 200px;
-  width: 100%;
-  height: 440px;
-  background-image: url('/img/indexMetaphysicsAbout5.png');
-  background-size: cover;
-  padding: 125px 175px 112px 175px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  .text {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 130%;
-    text-align: center;
-    letter-spacing: -0.01em;
-    color: #FFFFFF;
-
-    margin-bottom: 50px;
-  }
-  .link {
-    padding: 10px 30px 12px;
-    width: fit-content;
-
-    border: 2px solid #FFFFFF;
-    border-radius: 100px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 150%;
-    letter-spacing: -0.26px;
-    color: #FFFFFF;
-  }
-}
-
-.blog {
-  margin-top: 220px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  .title {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 130%;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-    color: #000000;
-    width: 438px;
-  }
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-
-    .post {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 580px;
-      margin-bottom: 61px;
-
-      .title {
-        width: 100%;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 130%;
-        letter-spacing: -0.01em;
-        color: #000000;
-        max-height: 62px;
-
-        overflow: hidden;
-        position: relative;
-        padding-right: 1em;
-        text-transform: none;
+    .description2 {
+      margin-top: 40px;
+      font-size: 8.205128205128204vw;
+      margin-left: 0;
+      .name {
+        font-size: 3.8461538461538463vw;
       }
-      .title:before {
-        content: '…';
-        position: absolute;
-        right: 0;
-        bottom: 0;
+    }
+    .circle {
+      margin-top: 100px;
+      .dignity {
+        font-size: 7.6923076923076925vw;
+        padding: 2.564102564102564vw 7.6923076923076925vw;
+      }
+      .text {
+        font-size: 4.358974358974359vw;
+        margin-top: 60px;
+      }
+      .m1 {
+        margin-left: 0;
       }
 
-      .title:after {
-        content: "";
-        position: absolute;
-        right: 0;
-        width: 1em;
-        height: 1em;
-        margin-top: 0.2em;
-        background: white;
-      }
-      .date {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 150%;
-        letter-spacing: -0.26px;
-        color: rgba(0, 0, 0, 0.4);
-
+      .m2 {
         margin-top: 20px;
+        margin-left: 32.05128205128205vw;
+        argin-right: 0;
+      }
+
+      .m3 {
+        margin-top: 20px;
+      }
+
+      .m4 {
+        margin-top: 20px;
+        margin-left: 38.71794871794872vw;
+      }
+
+      .m5 {
+        margin-top: 20px;
+        margin-left: 0;
+      }
+
+      .m6 {
+        margin-top: 20px;
+        margin-left: 15vw;
       }
     }
   }
